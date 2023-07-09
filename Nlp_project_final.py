@@ -20,8 +20,6 @@ from sklearn.model_selection import train_test_split
 
 
 
-# Suppress FutureWarning for n_init parameter
-warnings.filterwarnings('ignore', category=FutureWarning)
 
 # Read the dataset into a pandas DataFrame
 df = pd.read_csv('articles1.csv', nrows=1000)
@@ -108,7 +106,7 @@ df['content'] = df['content'].apply(preprocess_text)
 
 # Extract the preprocessed content column from the DataFrame
 corpus = df['content']
-num_clusters = 5
+num_clusters = 10
 # Split into train and test sets
 corpus_train, corpus_test, y_train, y_test = train_test_split(corpus, df['content'], test_size=0.2, random_state=42)
 
